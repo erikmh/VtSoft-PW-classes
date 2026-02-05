@@ -13,8 +13,8 @@ private string $cf_var_6 = "0720";
 private string $cf_var_7 = "0960";
 private string $cf_var_8 = "1440";
 private string $cf_var_9 = "1920";
-private string $cf_base_url = "https://image.jrrt.me/";		#	<—— usually	https://imagedelivery.net/<ACCOUNT_HASH>/` or
-															#		  		https://example.com/cdn-cgi/imagedelivery/<ACCOUNT_HASH>/
+private string $cf_base_url = "https://image.jrrt.me/";		#	<—— usually https://imagedelivery.net/<ACCOUNT_HASH>/` or
+															#				https://example.com/cdn-cgi/imagedelivery/<ACCOUNT_HASH>/
 
 
 public string $alt;
@@ -34,173 +34,173 @@ public string $width;
 
 public function setAlt(string $alt): void {
 	if (!isset($alt) || $alt == ""):
-    	$this->alt = "";
-        return;
-    endif;
+		$this->alt = "";
+		return;
+	endif;
 
 	$this->alt = "alt='" . $alt . "' ";
 }
 
 public function setCfImageID(string $cfImageID): void {
-    if (!isset($cfImageID)):
-        $this->cfImageID = "";
-        return;
-    endif;
+	if (!isset($cfImageID)):
+		$this->cfImageID = "";
+		return;
+	endif;
 
-    $this->cfImageID = $cfImageID;
+	$this->cfImageID = $cfImageID;
 }
 
 public function setCrossorigin(string $crossorigin): void {
 	if (!isset($crossorigin) || $crossorigin == ""):
-    	$this->crossorigin = "";
-        return;
-    endif;
+		$this->crossorigin = "";
+		return;
+	endif;
 
-    $crossorigin = mb_strtolower($crossorigin);
-    if ($crossorigin == "anonymous" || $crossorigin == "use-credentials"):
-        $this->crossorigin = "crossorigin='" . $crossorigin . "' ";
-    else:
-        $this->crossorigin = "";
-    endif;
+	$crossorigin = mb_strtolower($crossorigin);
+	if ($crossorigin == "anonymous" || $crossorigin == "use-credentials"):
+		$this->crossorigin = "crossorigin='" . $crossorigin . "' ";
+	else:
+		$this->crossorigin = "";
+	endif;
 }
 
 public function setDecoding(string $decoding): void {
 	if (!isset($decoding) || $decoding == ""):
-    	$this->decoding = "";
-        return;
-    endif;
+		$this->decoding = "";
+		return;
+	endif;
 
-    $decoding = mb_strtolower($decoding);
-    if ($decoding == "async" || $decoding == "sync" || $decoding == "auto"):
-        $this->decoding = "decoding='" . $decoding . "' ";
-    else:
-        $this->decoding = "";
-    endif;
+	$decoding = mb_strtolower($decoding);
+	if ($decoding == "async" || $decoding == "sync" || $decoding == "auto"):
+		$this->decoding = "decoding='" . $decoding . "' ";
+	else:
+		$this->decoding = "";
+	endif;
 }
 
 public function setElementtiming(string $elementtiming): void {
 	if (!isset($elementtiming) || $elementtiming == ""):
-    	$this->elementtiming = "";
-        return;
-    endif;
+		$this->elementtiming = "";
+		return;
+	endif;
 
 	$this->elementtiming = "elementtiming='" . $elementtiming . "' ";
 }
 
 public function setFetchpriority(string $fetchpriority): void {
 	if (!isset($fetchpriority) || $fetchpriority == ""):
-    	$this->fetchpriority = "";
-        return;
-    endif;
+		$this->fetchpriority = "";
+		return;
+	endif;
 
-    $fetchpriority = mb_strtolower($fetchpriority);
-    if ($fetchpriority == "high" || $fetchpriority == "low" || $fetchpriority == "auto"):
-        $this->fetchpriority = "fetchpriority='" . $fetchpriority . "' ";
-    else:
-        $this->fetchpriority = "";
-    endif;
+	$fetchpriority = mb_strtolower($fetchpriority);
+	if ($fetchpriority == "high" || $fetchpriority == "low" || $fetchpriority == "auto"):
+		$this->fetchpriority = "fetchpriority='" . $fetchpriority . "' ";
+	else:
+		$this->fetchpriority = "";
+	endif;
 }
 
 public function setHeight(int $height): void {
 	if (!isset($height)):
-    	$this->height = "";
-        return;
-    endif;
+		$this->height = "";
+		return;
+	endif;
 
-    if ($height == 0):
-        $this->height = "";
-    else:
-        $this->height = "height='" . $height . "' ";
-    endif;
+	if ($height == 0):
+		$this->height = "";
+	else:
+		$this->height = "height='" . $height . "' ";
+	endif;
 }
 
 public function setLoading(string $loading): void {
 	if (!isset($loading)):
-    	$this->loading = "";
-        return;
-    endif;
+		$this->loading = "";
+		return;
+	endif;
 
-    $loading = mb_strtolower($loading);
-    if ($loading == "eager" || $loading == "lazy"):
-        $this->loading = "loading='" . $loading . "' ";
-    else:
-        $this->loading = "";
-    endif;
+	$loading = mb_strtolower($loading);
+	if ($loading == "eager" || $loading == "lazy"):
+		$this->loading = "loading='" . $loading . "' ";
+	else:
+		$this->loading = "";
+	endif;
 }
 
 public function setReferrerpolicy(string $referrerpolicy): void {
 	if (!isset($referrerpolicy)):
-    	$this->referrerpolicy = "";
-        return;
-    endif;
+		$this->referrerpolicy = "";
+		return;
+	endif;
 
-    $referrerpolicy = mb_strtolower($referrerpolicy);
-    if ($referrerpolicy == "no-referrer" || $referrerpolicy == "no-referrer-when-downgrade" || $referrerpolicy == "origin" || $referrerpolicy == "origin-when-cross-origin" || $referrerpolicy == "same-origin" || $referrerpolicy == "strict-origin" || $referrerpolicy == "strict-origin-when-cross-origin" || $referrerpolicy == "unsafe-url"):
-        $this->referrerpolicy = "referrerpolicy='" . $referrerpolicy . "' ";
-    else:
-        $this->referrerpolicy = "";
-    endif;
+	$referrerpolicy = mb_strtolower($referrerpolicy);
+	if ($referrerpolicy == "no-referrer" || $referrerpolicy == "no-referrer-when-downgrade" || $referrerpolicy == "origin" || $referrerpolicy == "origin-when-cross-origin" || $referrerpolicy == "same-origin" || $referrerpolicy == "strict-origin" || $referrerpolicy == "strict-origin-when-cross-origin" || $referrerpolicy == "unsafe-url"):
+		$this->referrerpolicy = "referrerpolicy='" . $referrerpolicy . "' ";
+	else:
+		$this->referrerpolicy = "";
+	endif;
 }
 
 public function setSizes(string $sizes): void {
 	if (!isset($sizes) || $sizes == ""):
-    	$this->sizes = "";
-        return;
-    endif;
+		$this->sizes = "";
+		return;
+	endif;
 
 	$this->sizes = "sizes='" . $sizes . "' ";
 }
 
 public function setSrc(string $src): void {
 	if (!isset($src) || $src == ""):
-    	$this->src = "";
-        return;
-    endif;
+		$this->src = "";
+		return;
+	endif;
 
 	$this->src = "src='" . $src . "' ";
 }
 
 public function setSrcset(string $srcset): void {
 	if (!isset($srcset) || $srcset == ""):
-    	$this->srcset = "";
-        return;
-    endif;
+		$this->srcset = "";
+		return;
+	endif;
 
 	$this->srcset = "srcset='" . $srcset . "' ";
 }
 
 public function setUsemap(string $usemap): void {
 	if (!isset($usemap) || $usemap == ""):
-    	$this->usemap = "";
-        return;
-    endif;
+		$this->usemap = "";
+		return;
+	endif;
 
 	$this->usemap = "usemap='" . $usemap . "' ";
 }
 
 public function setWidth(string $width): void {
 	if (!isset($width)):
-    	$this->width = "";
-        return;
-    endif;
+		$this->width = "";
+		return;
+	endif;
 
-    if ($width == 0):
-        $this->width = "";
-    else:
-        $this->width = "width='" . $width . "' ";
-    endif;
+	if ($width == 0):
+		$this->width = "";
+	else:
+		$this->width = "width='" . $width . "' ";
+	endif;
 }
 
 public function render() {
 	if ($this->cfImageID !== ""):
 
 //	shortcut for Cloudflare-hosted adaptive images
-// 		$img->setHeight(3356); 	#		<—— intrinsic image height
-// 		$img->setWidth(2880);	#		<—— intrinsic image width
-// 		$img->setAlt("Karen smiles over her menu at a corner porch table; inset: I smile back");
-// 		$img->setCfImgURL("https://image.jrrt.me/ac192a71-050c-4758-aebc-5f55da1ca300");
-// 		$img->setTitle("1gqit-xxxx-vermont-softworks-logo");		#	<—— for my own reference; optional
-// 		$img->render();
+//		$img->setHeight(3356);	#		<—— intrinsic image height
+//		$img->setWidth(2880);	#		<—— intrinsic image width
+//		$img->setAlt("Karen smiles over her menu at a corner porch table; inset: I smile back");
+//		$img->setCfImageID("ac192a71-050c-4758-aebc-5f55da1ca300");
+//		$img->setTitle("1gqit-xxxx-vermont-softworks-logo");		#	<—— for my own reference; optional
+//		$img->render();
 //	will yield:
 //		<img
 //			height="3356"
@@ -221,6 +221,8 @@ public function render() {
 //				https://image.jrrt.me/ac192a71-050c-4758-aebc-5f55da1ca300/w1440 1440w,
 //				https://image.jrrt.me/ac192a71-050c-4758-aebc-5f55da1ca300/w1920 1920w
 //			"
+// 		>
+//
 //	make sure to include in your CSS:
 //		img {
 //			width: 100%;
@@ -275,3 +277,7 @@ public function render() {
 	);
 }
 }
+
+// Change log
+//
+// 2026-02-03: Corrected misleading comments

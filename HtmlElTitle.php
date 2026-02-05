@@ -1,21 +1,23 @@
 <?php namespace VtSoft;
 
 class HtmlElTitle extends HtmlElement {
-    public string $content;
+public string $content;
 
-    public function setContent(string $content): void {
-        $this->content = trim($content);
-    }
+public function setContent(string $content): void {
+	if (!isset($content)):
+		$this->content = "";
+		return;
+	endif;
+	$this->content = trim($content);
+}
 
-    public function render(): string {
-        return (
-        	"<title>" .
-            trim(
-                $this->renderNobleGlobals() .
-                ($this->content ?? "") .
-                $this->renderPlebianGlobals()
-            ) .
-            "</title>"
-        );
-    }
+public function render(): string {
+	return (
+		"<title " .
+		trim($this->renderAllGlobals()) .
+		">" .
+		$this->content .
+		"</title>"
+	);
+}
 }
